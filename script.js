@@ -7,7 +7,7 @@ const restartButton = document.getElementById("restartButton");
 const gameContainer = document.querySelector(".game-container");
 const thinkingMessage = document.getElementById("thinkingMessage");
 let count = 0;
-const max = 200;
+const max = 100;
 const min = 1;
 thinkingMessage.textContent = `1 and ${max}`;
 let randomNumber = Math.trunc(Math.random() * max) + 1;
@@ -36,7 +36,7 @@ const gameLogic = function () {
     guessCount.textContent = count;
   }
   // lose game condition
-  if (count >= 10) {
+  if (count > 5) {
     message.textContent = `Game Over, you suck brother. The number was ${randomNumber}`;
     guessButton.disabled = true;
     guessInputEl.disabled = true;
